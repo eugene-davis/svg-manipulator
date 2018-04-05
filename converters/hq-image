@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Converts the image to PNG
+# Example:
+# svg-export-wm bits-must-flow
+
+name=$1
+
+svgexport ${name}.svg ${name}.png

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Converts the image to PNG and produces a watermarked form in the end
+# Example:
+# svg-export-wm bits-must-flow
+
+name=$1
+
+hq-image ${name}
+composite -dissolve 25% -gravity center /watermark/watermark.png ${name}.png  wm-${name}.png
