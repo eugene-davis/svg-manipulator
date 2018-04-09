@@ -8,4 +8,4 @@ name=$1
 
 hq-image ${name}
 composite -dissolve 25% -gravity center /watermark/watermark.png ${name}.png  wm-${name}.png
-convert scale 50% wm-${name}.png
+convert -sharpen 0x1.2 -resize 60% -quality 95 wm-${name}.png wm-${name}.png
