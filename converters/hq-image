@@ -5,5 +5,14 @@
 # svg-export-wm bits-must-flow
 
 name=$1
+date=$(grep date ${name}.md | awk '{print $2}' | awk -F"-" '{print $1}')
 
 svgexport ${name}.svg ${name}.png
+
+# Copyright notice
+convert ${name}.png -gravity southeast \
+    -font DejaVu-Sans \
+    -pointsize 20 \
+    -stroke '#FFFF' -strokewidth 2 -annotate +10+10 "©${date}" \
+    -stroke  none   -fill white    -annotate +10+10 "©${date}" \
+    ${name}_copyright.png
