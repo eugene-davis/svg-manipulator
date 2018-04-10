@@ -7,5 +7,5 @@
 name=$1
 
 hq-image ${name}
-composite -dissolve 25% -gravity center /watermark/watermark.png ${name}_copyright.png  wm-${name}.png
+composite -dissolve 35% -gravity center /watermark/watermark.png ${name}_copyright.png  wm-${name}.png
 convert -sharpen 0x1.2 -resize 60% -quality 5 wm-${name}.png wm-${name}.png
