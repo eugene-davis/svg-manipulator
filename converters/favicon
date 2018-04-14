@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Converts the image to PNG and produces a watermarked form in the end
+# Example:
+# svg-export-wm bits-must-flow
+
+name=$1
+
+sizes=(16 24 32 48 64)
+files=()
+
+for size in "${sizes[@]}"
+do
+    convert ${name}.png -resize ${size}x${size} ${name}-${size}.png
+    files+=("${name}-${size}.png")
+done
+
+convert "${files[@]}" ${name}.ico
+rm favicon-*.png
