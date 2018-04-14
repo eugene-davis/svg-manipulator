@@ -4,15 +4,23 @@
 # Example:
 # svg-export-wm bits-must-flow
 
+# Scaling factor
+if [ -z ${2+x} ]
+then
+    scale=1
+else
+    scale=$2
+fi
+
 name=$1
 date=$(grep date ${name}.md | awk '{print $2}' | awk -F"-" '{print $1}')
 
-svgexport ${name}.svg ${name}.png
+svgexport ${name}.svg ${name}.png ${scale}x
 
 # Copyright notice
 convert ${name}.png -gravity southeast \
     -font DejaVu-Sans \
-    -pointsize 20 \
-    -stroke '#FFFF' -strokewidth 2 -annotate +10+10 "©${date}" \
-    -stroke  none   -fill white    -annotate +10+10 "©${date}" \
+    -pointsize $(($scale * 20)) \
+    -stroke '#FFFF' -strokewidth 2 -annotate +$(($scale * 10))+$(($scale * 10)) "©${date}" \
+    -stroke  none   -fill white    -annotate +$(($scale * 10))+$(($scale * 10)) "©${date}" \
     ${name}_copyright.png
