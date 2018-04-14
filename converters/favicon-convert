@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Converts the image to PNG and produces a watermarked form in the end
-# Example:
-# svg-export-wm bits-must-flow
+# Generates the favicon from an input png
 
 name=$1
 
