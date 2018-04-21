@@ -7,14 +7,14 @@ Provides scripts for automatically exporting SVG to PNG with [svgexport](https:/
 To use the convert-shell script, follow the directory structure laid out here. Optional elements are indicated in (), variable names in [].
 
 - [project directory]
-    - [image1]
-        - (fonts)
-        - ([image1].md)
-        - [image1].svg
-    - watermark
-        - watermark.png
-    - favicon
-        - favicon.png
+  - [image1]
+    - (fonts)
+      - ([image1].md)
+      - [image1].svg
+  - watermark
+    - watermark.png
+  - favicon
+    - favicon.png
 
 ## hq-image
 
