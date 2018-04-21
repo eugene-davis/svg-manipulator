@@ -2,7 +2,7 @@
 
 # Converts the image to PNG
 # Example:
-# svg-export-wm bits-must-flow
+# shq-image bits-must-flow 4
 
 # Scaling factor
 if [ -z ${2+x} ]

@@ -2,7 +2,7 @@
 
 # Converts the image to PNG and produces a watermarked form in the end
 # Example:
-# svg-export-wm bits-must-flow
+# watermark bits-must-flow
 
 name=$1
 
