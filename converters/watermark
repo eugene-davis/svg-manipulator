@@ -5,7 +5,8 @@
 # watermark bits-must-flow
 
 name=$1
+scale=$2
 
-hq-image ${name}
+hq-image ${name} ${scale}
 composite -dissolve 35% -gravity center /watermark/watermark.png ${name}_copyright.png  wm-${name}.png
 convert -sharpen 0x1.2 -resize 40% -quality 2 wm-${name}.png wm-${name}.png
