@@ -10,4 +10,7 @@ name=$2
 # Optional - scaling factor
 scale=$3
 
+# Update fonts cache
+sudo fc-cache -f -v
+
 $command $name $scale
