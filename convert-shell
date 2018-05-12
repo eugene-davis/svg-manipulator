@@ -11,6 +11,6 @@ name=$2
 scale=$3
 
 # Update fonts cache
-fc-cache -f -v
+fc-cache -f &> /dev/null
 
 $command $name $scale
