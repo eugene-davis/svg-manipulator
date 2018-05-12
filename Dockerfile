@@ -11,6 +11,6 @@ RUN chmod +x -R /usr/local/bin/converters
 COPY convert-shell /usr/local/bin
 RUN chmod +x /usr/local/bin/convert-shell
 
-LABEL io.whalebrew.config.volumes '["./fonts:/root/.local/share/fonts/TTF/type1:ro"]'
+LABEL io.whalebrew.config.volumes "[\"$(PWD)/fonts:/root/.local/share/fonts/TTF/type1:ro\"]"
 
 ENTRYPOINT [ "convert-shell" ]
