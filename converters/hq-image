@@ -20,7 +20,7 @@ svgexport ${name}.svg ${name}.png ${scale}x
 if [ -f ${name}.md ]
 then
     date=$(grep date ${name}.md | awk '{print $2}' | awk -F"-" '{print $1}')
-    cpscale=$(echo "$scale * 30" | bc -l)
+    cpscale=$(echo "$scale * 25" | bc -l)
 
     # Copyright notice
     convert ${name}.png -gravity southeast \
