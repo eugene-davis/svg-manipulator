@@ -11,6 +11,6 @@ name=$2
 scale=$3
 
 # Update fonts cache
-sudo fc-cache -f -v
+fc-cache -f -v
 
 $command $name $scale
