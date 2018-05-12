@@ -7,3 +7,10 @@ RUN apt-get update && apt-get install imagemagick
 COPY converters /usr/local/bin/converters
 ENV PATH="${PATH}:/usr/local/bin/converters"
 RUN chmod +x -R /usr/local/bin/converters
+
+COPY svg-manipulator /usr/local/bin
+RUN chmod +x /usr/local/bin/svg-manipulator
+
+LABEL io.whalebrew.config.volumes '["$PWD/fonts:/usr/local/share/fonts/type1:ro"]'
+
+ENTRYPOINT [ "svg-manipulator" ]

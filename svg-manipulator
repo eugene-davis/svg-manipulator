@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Used to get a shell into an svg-converter container and execute a basic command
+# Will be expanded later
+# Example:
+# bash .automation/convert-shell.sh svgexport bits-must-flow
+
+command=$1
+name=$2
+# Optional - scaling factor
+scale=$3
+
+# Update fonts cache
+fc-cache -f &> /dev/null
+
+$command $name $scale
